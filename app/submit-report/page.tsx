@@ -40,7 +40,7 @@ export default function SubmitReport() {
           </div>
 
           <div className="mt-16 bg-zinc-900/50 rounded-2xl border border-white/5 p-6">
-            <ReportWizard />
+            {typeof window !== "undefined" ? <ReportWizard /> : null}
           </div>
         </div>
       </main>
