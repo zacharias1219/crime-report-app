@@ -1,36 +1,147 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# **Crime Reporting Application - Safe Report**
 
-## Getting Started
+This project introduces **Safe Report**, an innovative application allowing users to report crimes and incidents anonymously. Built using **Next.js 14**, **Gemini AI**, **Shadcn**, and **TailwindCSS**, the application combines modern frameworks and AI technology to ensure user anonymity, seamless reporting, and actionable administrative workflows.
 
-First, run the development server:
+---
+
+## **Features**
+
+- **Anonymous Reporting**:
+  - Users can submit crime reports anonymously.
+  - Two urgency levels: Emergency and Non-Emergency.
+  
+- **AI-Powered Analysis**:
+  - Automatically identifies incident type and generates a detailed description using Gemini AI.
+  - Generates unique report IDs for tracking purposes.
+
+- **Interactive Admin Dashboard**:
+  - Allows emergency authorities to review and manage reports.
+  - Secured access via sign-in and sign-up systems.
+
+- **Seamless UI Design**:
+  - Built with Shadcn and TailwindCSS for a modern, user-friendly interface.
+
+---
+
+## **Tech Stack**
+
+- **Frontend**: Next.js 14, Shadcn, TailwindCSS
+- **Backend**: Prisma ORM, FastAPI
+- **AI Integration**: Gemini AI for image analysis and automatic report generation
+- **Database**: PostgreSQL
+- **Utilities**: Mapbox for geolocation and auto-address filling
+
+---
+
+## **Setup and Installation**
+
+### **Prerequisites**
+
+- Node.js v16+
+- PostgreSQL database
+- API keys for Gemini AI and Mapbox
+
+### **Installation Steps**
+
+1. **Clone the Repository**:
+
+   ```bash
+   git clone https://github.com/yourusername/safe-report.git
+   cd safe-report
+   ```
+
+2. **Install Dependencies**:
+
+   ```bash
+   npm install
+   ```
+
+3. **Setup Environment Variables**:
+   - Create a `.env` file in the root directory and include the following:
+
+     ```env
+     NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN=your_mapbox_access_token
+     GEMINI_AI_API_KEY=your_gemini_ai_api_key
+     DATABASE_URL=your_postgres_database_url
+     ```
+
+4. **Set Up Prisma**:
+   - Generate the Prisma client:
+
+     ```bash
+     npx prisma generate
+     ```
+
+   - Migrate the database schema:
+
+     ```bash
+     npx prisma migrate dev
+     ```
+
+5. **Run the Application**:
+
+   ```bash
+   npm run dev
+   ```
+
+   Access the application at `http://localhost:3000`.
+
+---
+
+## **Directory Structure**
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+├── app
+│   ├── components
+│   ├── pages
+│   ├── services
+│   ├── styles
+│   └── utils
+├── prisma
+│   └── schema.prisma
+├── public
+│   └── assets
+├── .env
+├── README.md
+└── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## **Workflow Overview**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Anonymous Reporting**:
+   - Users upload images and provide location details.
+   - AI generates report details based on uploaded images.
 
-## Learn More
+2. **Admin Dashboard**:
+   - Review reports, update statuses, and manage submissions.
 
-To learn more about Next.js, take a look at the following resources:
+3. **Tracking Reports**:
+   - Users track report statuses using unique IDs.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **Security Features**:
+   - Authentication for admin access.
+   - Data encryption for privacy protection.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## **Future Enhancements**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Add multilingual support.
+- Integrate SMS or email notifications for report updates.
+- Expand AI capabilities for more detailed image analysis.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## **Contributing**
+
+Contributions are welcome! Feel free to fork the repository, make enhancements, and submit a pull request.
+
+---
+
+## **License**
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+---
